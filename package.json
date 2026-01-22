@@ -1,6 +1,6 @@
 {
     "name": "wunified-rehype-document",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "UnifiedJS::RehypeDocument for Webpan",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
