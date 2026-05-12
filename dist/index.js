@@ -14,7 +14,7 @@ class WRehypeDocument extends wp_unified_1.WUnifiedPlugin {
         if (options.snapshot === true)
             /// tree is an hast.Root
             processor.apply(() => (tree) => {
-                this.result.ast = structuredClone(tree);
+                this.result.content = structuredClone(tree);
             });
         return processor;
     }
