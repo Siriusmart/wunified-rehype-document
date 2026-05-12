@@ -1,6 +1,6 @@
 {
     "name": "wunified-rehype-document",
-    "version": "0.0.2",
+    "version": "0.1.2",
     "description": "UnifiedJS::RehypeDocument for Webpan",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
@@ -26,6 +26,6 @@
     "dependencies": {
         "rehype-document": "^7.0.3",
         "unified": "^11.0.5",
-        "wp-unified": "^0.0.2"
+        "wp-unified": "^0.1.2"
     }
 }

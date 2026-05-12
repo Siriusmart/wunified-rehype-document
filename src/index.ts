@@ -4,8 +4,16 @@ import rehypeDocument from "rehype-document"
 export default class WRehypeDocument extends WUnifiedPlugin {
     apply(processor: UntypedProcessor, options: any): UntypedProcessor {
         if (options === undefined)
-            return processor.use(rehypeDocument)
+            processor = processor.use(rehypeDocument)
         else
-            return processor.use(rehypeDocument, options)
+            processor = processor.use(rehypeDocument, options)
+
+        if (options.snapshot === true)
+            /// tree is an hast.Root
+            processor.apply(() => (tree: any) => {
+                this.result.ast = structuredClone(tree)
+            })
+
+        return processor;
     }
 }
