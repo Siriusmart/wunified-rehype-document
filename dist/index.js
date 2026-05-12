@@ -8,9 +8,15 @@ const rehype_document_1 = __importDefault(require("rehype-document"));
 class WRehypeDocument extends wp_unified_1.WUnifiedPlugin {
     apply(processor, options) {
         if (options === undefined)
-            return processor.use(rehype_document_1.default);
+            processor = processor.use(rehype_document_1.default);
         else
-            return processor.use(rehype_document_1.default, options);
+            processor = processor.use(rehype_document_1.default, options);
+        if (options.snapshot === true)
+            /// tree is an hast.Root
+            processor.apply(() => (tree) => {
+                this.result.ast = structuredClone(tree);
+            });
+        return processor;
     }
 }
 exports.default = WRehypeDocument;
