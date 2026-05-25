@@ -1,5 +1,5 @@
-import { UntypedProcessor, WUnifiedPlugin } from "wp-unified"
 import rehypeDocument from "rehype-document"
+import { UntypedProcessor, WUnifiedPlugin } from "wp-unified"
 
 export default class WRehypeDocument extends WUnifiedPlugin {
     apply(processor: UntypedProcessor, options: any): UntypedProcessor {
